@@ -6,5 +6,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('flower_supplier_main.urls'))
 ]
-
-# handler404 = views.friendly_404

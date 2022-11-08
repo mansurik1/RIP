@@ -2,12 +2,14 @@
 <html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
     <ul>
         {% for m in menu %}
-            {% include 'flower_supplier_main/list_element.html' with element=m %}
+            <li><a href="{% url 'element_url' m.menu_url %}">{{ m.menu_title }}</a></li>
         {% endfor %}
     </ul>
     {% block content %}{% endblock %}

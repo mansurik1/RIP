@@ -1,0 +1,9 @@
+{% extends 'flower_supplier_main/base.html' %}
+{% load static %}
+
+{% block title %}{{ content.title }}{% endblock %}
+
+{% block content %}
+    <div class="order-text">{{ content.description }}</div>
+    <img src = "{% static content.photo %}">
+{% endblock %}

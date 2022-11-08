@@ -7,4 +7,4 @@ urlpatterns = [
     path('', include('flower_supplier_main.urls'))
 ]
 
-handler404 = views.friendly_404
+# handler404 = views.friendly_404

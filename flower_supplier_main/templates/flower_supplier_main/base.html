@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <ul>
+        {% for m in menu %}
+            {% include 'flower_supplier_main/list_element.html' with element=m %}
+        {% endfor %}
+    </ul>
+    {% block content %}{% endblock %}
+</body>
+</html>

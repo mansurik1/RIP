@@ -1,0 +1,23 @@
+{% extends 'RIP_lab/base.html' %}
+
+{% block title %}Каталог продукции{% endblock %}
+
+{% block content %}
+    Чтобы изменить количество отображаемых записей, введите новое
+    <br>значение в поле ниже и нажмите кнопку "Submit".</br>
+    <p></p>
+    <form action="send_text" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="text" type="text"><br><br>
+        <input type="submit" value="Submit" >
+    </form>
+
+    <ul>
+        {% for item in items %}
+            <li><a href="{% url 'item_url' item.id %}">{{ item.title }}</a> </li>
+        {% empty %}
+            <li>Список пуст</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

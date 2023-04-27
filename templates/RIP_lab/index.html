@@ -1,0 +1,18 @@
+{% extends 'RIP_lab/base.html' %}
+
+{% block title %}ГлавЦветТорг{% endblock %}
+
+{% block content %}
+
+    Здравствуйте, уважаемые посетители!
+    <br>Пожалуйста, выберите один из разделов сайта:</br>
+
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{% url 'topic_url' topic.url %}">{{ topic.title }}</a> </li>
+        {% empty %}
+            <li>Список пуст</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

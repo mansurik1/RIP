@@ -1,0 +1,26 @@
+{% extends 'RIP_lab/base.html' %}
+{% load static %}
+
+{% block title %}{{ item.title }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ item.title }}</h1>
+
+    Стоимость товара: <b>{{ item.price }} руб.</b>
+
+    <br>
+        Остаток позиции:
+            <b>
+                {% if item.available_quantity == 0 %}
+                    нет в наличии
+                {% else %}
+                    {{ item.available_quantity }} шт.
+                {% endif %}
+            </b>
+    </br>
+
+    <p>Фото товара:</p>
+    <img src="{{ image_path.path }}">
+
+{% endblock %}

@@ -4,8 +4,11 @@
 
 {% block content %}
 
-    Здравствуйте, уважаемые посетители!
-    <br>Пожалуйста, выберите один из разделов сайта:</br>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+    <h1>Здравствуйте, уважаемые посетители!</h1>
+    Пожалуйста, выберите один из разделов сайта:
 
     <ul>
         {% for topic in topics %}
